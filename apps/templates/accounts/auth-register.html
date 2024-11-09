@@ -33,14 +33,23 @@
                                     </div>
                                     <form class="needs-validation mt-4 pt-2" novalidate action="index.html">
                                         {% csrf_token %}
-                                        <div class="mb-3">
-                                            <label class="form-label">Country</label>
-                                            <select required class="form-control form-select">
-                                                <option value="+91">India (+91)</option>
-                                                <option value="+1">United States (+1)</option>
-                                                <option value="+44">United Kingdom (+44)</option>
-                                                <option value="+1">Canada (+1)</option>
-                                            </select>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               
+                                                    <div class="mb-3 position-relative">
+                                                        <label class="form-label" for="validationTooltipUsername">Username</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                                            <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required>
+                                                            <div class="invalid-tooltip">
+                                                            Please choose a unique and valid username.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                              
+                                               
+                                            </div>
+                                            
                                         </div>
                                         <div class="mb-3">
                                             <label for="phonenumber" class="form-label">Phone Number</label>
@@ -58,18 +67,40 @@
                                                 Please Enter Email
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="username" class="form-label">PAN</label>
-                                            <input type="text" class="form-control" id="pan"
-                                                placeholder="Eg : XYZ1234K1" required>
-                                            <div class="invalid-feedback">
-                                                Please Enter PAN
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="validationCustom03">City</label>
+                                                    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid city.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="validationCustom04">State</label>
+                                                    <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid state.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="validationCustom05">Zip</label>
+                                                    <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid zip.
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="mb-4">
-                                            <p class="mb-0">By registering you agree to the sfitech <a href="#"
-                                                    class="text-primary">Terms of Use</a></p>
+                                        <div class="mb-3">
+                                            <label for="example-password-input" class="form-label">Password</label>
+                                            <input class="form-control" type="password" value="hunter2" id="example-password-input">
                                         </div>
+                                       
                                         <div class="mb-3">
                                             <button class="btn btn-primary w-100 waves-effect waves-light"
                                                 onclick="register_user()" type="button">Proceed</button>
