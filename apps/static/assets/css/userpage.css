@@ -6,10 +6,10 @@
     --bs-body-bg: #000;
 }
 .btn-primary{
-    --bs-btn-bg: #3241FF;
+    --bs-btn-bg: #fd5523;
 }
 .form-control {
-    background-color:#2A2F4D!important;
+    background-color:#282f36!important;
 }
 [data-bs-theme=dark] .btn-light {
     background-color:#2A2F4D!important;
@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
 }
 .auth-content{
-    background-color: #141A30;
+    background-color: #22282e;
     border-radius: 5%;
     padding: 40px;
 
@@ -33,7 +33,7 @@
     color: #fff!important;
 }
 .text-primary {
-    color: #3241FF!important ;
+    color: #fd5523!important ;
 }
 .img-fix{
     max-width: 450px!important;
