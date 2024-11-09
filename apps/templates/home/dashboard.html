@@ -1,0 +1,405 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Dashboard|siftech {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+{% block content %}
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Dashboard</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="row ">
+                <div class="col-xl-12 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                        <div class="card-body p-3">
+                            <div class="row  d-flex justify-content-center align-items-center flex-wrap">
+                                <div class="col-5">
+                                    <div class="d-flex align-items-center flex-wrap ">
+                                        <div class="me-3">
+                                            <strong>Quick Actions:</strong>
+                                        </div>
+                                       
+                                        <p class="mb-1" style="color: #FF9501;
+;"><i class="fab fa-cc-visa align-middle me-3 font-size-18"> Add </i></p>
+                                        <p class="mb-1 text-primary " ><i class="mdi mdi-arrow-top-right align-middle me-3 font-size-18"> Pay</i></p>
+                                        
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="d-flex  flex-wrap">
+                                       
+                                        <button class="btn btn-primary mx-3 mb-lg-0 mb-2 " type="button"><i class="bx bx-calendar"></i>Today</button>
+                                        <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button"> This Week</button>
+                                        <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button">Last Month</button>
+                                        <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button">All Time</button>
+                                        <button class="btn btn-secondary mx-2 mb-lg-0 mb-3" type="button">
+                                            Export <i class="bx bx-link-external ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-xl-3 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                        <!-- card body -->
+                        <div class="card-body">
+                            <div class="row ">
+                                <div class="col-7">
+                                    <div class="activity-icon avatar-md mb-3">
+                                        <span class="avatar-title  bg-primary-subtle text-primary rounded-circle">
+                                        <i class="bx bx-rupee font-size-24" style="color: #fff;"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <span class="text-muted mt-1 font-size-15 lh-1 d-block text-truncate">Today</span>
+                                </div>
+                                <div class="col-12">
+                                    <span class="text-muted mb-1 lh-1 d-block text-truncate">My Balance</span>
+                                    
+                                    <h4 class="mb-3">
+                                        ₹<span class="counter-value" data-target="6000000"></span>
+                                    </h4>
+                                </div>
+
+                               
+                            </div>
+                            <div class="row align-items-center text-nowrap">
+                                <div class="col-6">
+                                <span class="badge  font-size-15 text-success"><i class="bx bx-up-arrow-circle d-block font-size-18 me-1">80%</i></span>
+                            </div>
+                                <div class="col-6">
+                                <span class="ms-1 text-muted font-size-15 text-primary">View Detail</span>
+                            </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+
+                <div class="col-xl-3 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                         <!-- card body -->
+                         <div class="card-body">
+                            <div class="row ">
+                                <div class="col-8">
+                                    <div class="activity-icon avatar-md mb-3">
+                                        <span class="avatar-title  bg-primary-subtle text-primary rounded-circle">
+                                        <i class="bx bx-rupee font-size-24" style="color: #fff;"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <span class="text-muted mt-1 font-size-15 lh-1 d-block text-truncate">Today</span>
+                                </div>
+                                <div class="col-12">
+                                    <span class="text-muted mb-1 lh-1 d-block text-truncate">Total Income</span>
+                                    
+                                    <h4 class="mb-3">
+                                        ₹<span class="counter-value" data-target="5000000"></span>
+                                    </h4>
+                                </div>
+
+                               
+                            </div>
+                            <div class="row align-items-center text-nowrap">
+                                <div class="col-6">
+                                <span class="badge  font-size-15 text-success"><i class="bx bx-up-arrow-circle d-block font-size-18 me-1">50%</i></span>
+                            </div>
+                                <div class="col-6">
+                                <span class="ms-1 text-muted font-size-15 text-primary">View Detail</span>
+                            </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col-->
+
+                <div class="col-xl-3 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                         <!-- card body -->
+                         <div class="card-body">
+                            <div class="row ">
+                                <div class="col-8">
+                                    <div class="activity-icon avatar-md mb-3">
+                                        <span class="avatar-title  bg-primary-subtle text-primary rounded-circle">
+                                        <i class="bx bx-rupee font-size-24" style="color: #fff;"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <span class="text-muted mt-1 font-size-15 lh-1 d-block text-truncate">Today</span>
+                                </div>
+                                <div class="col-12">
+                                    <span class="text-muted mb-1 lh-1 d-block text-truncate">Total Outcome</span>
+                                    
+                                    <h4 class="mb-3">
+                                        ₹<span class="counter-value" data-target="10000000"></span>
+                                    </h4>
+                                </div>
+
+                               
+                            </div>
+                            <div class="row align-items-center text-nowrap">
+                                <div class="col-6">
+                                <span class="badge  font-size-15 text-danger"><i class="bx bx-down-arrow-circle d-block font-size-18 me-1">25%</i></span>
+                            </div>
+                                <div class="col-6">
+                                <span class="ms-1 text-muted font-size-15 text-primary">View Detail</span>
+                            </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+
+                <div class="col-xl-3 col-md-6">
+                    <!-- card -->
+                    <div class="card card-h-100">
+                         <!-- card body -->
+                         <div class="card-body">
+                            <div class="row ">
+                                <div class="col-8">
+                                    <div class="activity-icon avatar-md mb-3">
+                                        <span class="avatar-title  bg-primary-subtle text-primary rounded-circle">
+                                        <i class="bx bx-sort font-size-24" style="color: #fff;"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <span class="text-muted mt-1 font-size-15 lh-1 d-block text-truncate">Today</span>
+                                </div>
+                                <div class="col-12">
+                                    <span class="text-muted mb-1 lh-1 d-block text-truncate">Net Profit</span>
+                                    
+                                    <h4 class="mb-3">
+                                        ₹<span class="counter-value" data-target="50000"></span>
+                                    </h4>
+                                </div>
+
+                               
+                            </div>
+                            <div class="row align-items-center text-nowrap">
+                                <div class="col-6 d-flex">
+                                <span class="badge  font-size-15 text-success"><i class="bx bx-up-arrow-circle d-block font-size-18 me-1">80%</i></span>
+                            </div>
+                                <div class="col-6">
+                                <span class="ms-1 text-muted font-size-15 text-primary">View Detail</span>
+                            </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->   
+               
+            </div><!-- end row-->
+
+          
+
+            <div class="row align-items-center">
+                <div class="col-xl-8">
+                    <div class="card">
+                       
+                            
+                        
+                        <div class="card-body">
+                            
+                            <div id="chart_datalabel" data-colors='["#5156be", "#2ab57d"]' class="apex-charts" dir="ltr"></div>                              
+                            <!-- <div id="line_chart_datalabel" data-colors='["#5156be", "#2ab57d"]' class="apex-charts" dir="ltr"></div>                               -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end row-->
+
+                <div class="col-xl-4">
+                    <div class="card">
+                        
+                           
+                       
+                        <div class="card-body">
+                            <h4 class="card-title mb-5">Performance</h4>
+                            <div id="performance_chart" data-colors='["#2ab57d", "#5156be", "#fd625e", "#4ba6ef", "#ffbf53"]' class="apex-charts"  dir="ltr"></div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <!-- end row-->
+
+            <div class="row">
+              
+                
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header align-items-center d-flex bg-transparent">
+                            <h4 class="card-title mb-0 flex-grow-1 font-size-18">Recent Transactions</h4>
+                            <div class="flex-shrink-0">
+                                <button class="btn btn-primary mx-2" type="button">
+                                    Today <i class="bx bx-calendar ms-2"></i>
+                                </button>
+                                <!-- Filter Button -->
+                                <button class="btn btn-secondary mx-2" type="button">
+                                    Filter <i class="bx bx-filter ms-2"></i>
+                                </button>
+                                <!-- Sort Button -->
+                                <button class="btn btn-secondary mx-2" type="button">
+                                    Sort by <i class="bx bx-sort-up ms-2"></i>
+                                </button>
+                                <!-- Export Button -->
+                               
+                            </div>
+                        </div><!-- end card header -->
+
+                        <div class="card-body">
+                            <div class="table-rep-plugin">
+                                <div class="table-responsive mb-0" data-pattern="priority-columns">
+                                    <table id="transactions" class="table table-borderless datatable">
+                                        <thead>
+                                            <tr class="bg-card-colr">
+                                                <th>Order ID</th>
+                                                <th data-priority="1">Beneficiary Name</th>
+                                                <th data-priority="3">Amount</th>
+                                                <th data-priority="1">Mode</th>
+                                                <th data-priority="3">Type</th>
+                                                <th data-priority="3">Bank Referee</th>
+                                                <th data-priority="6">Date</th>
+                                                <th data-priority="6">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>ORD001</td>
+                                                <td>John Doe</td>
+                                                <td>15000</td>
+                                                <td>UPI</td>
+                                                <td>Add Money</td>
+                                                <td>Referee A</td>
+                                                <td>2024-07-01</td>
+                                                <td><span class="text-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD002</td>
+                                                <td>Jane Smith</td>
+                                                <td>2000</td>
+                                                <td>Credit Card</td>
+                                                <td>Credit Card</td>
+                                                <td>Referee B</td>
+                                                <td>2024-07-02</td>
+                                                <td><span class="text-danger">Failed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD003</td>
+                                                <td>Mike Johnson</td>
+                                                <td>12000</td>
+                                                <td>Debit Card</td>
+                                                <td>Debit Card</td>
+                                                <td>Referee C</td>
+                                                <td>2024-07-03</td>
+                                                <td><span class="text-warning">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD004</td>
+                                                <td>Emily Davis</td>
+                                                <td>25000</td>
+                                                <td>UPI</td>
+                                                <td>Add Money</td>
+                                                <td>Referee D</td>
+                                                <td>2024-07-04</td>
+                                                <td><span class="text-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD005</td>
+                                                <td>Chris Wilson</td>
+                                                <td>18000</td>
+                                                <td>Credit Card</td>
+                                                <td>Credit Card</td>
+                                                <td>Referee E</td>
+                                                <td>2024-07-05</td>
+                                                <td><span class="text-warning">Pending</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD006</td>
+                                                <td>Patricia Brown</td>
+                                                <td>3000</td>
+                                                <td>Debit Card</td>
+                                                <td>Debit Card</td>
+                                                <td>Referee F</td>
+                                                <td>2024-07-06</td>
+                                                <td><span class="text-danger">Failed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>ORD007</td>
+                                                <td>Michael White</td>
+                                                <td>22000</td>
+                                                <td>UPI</td>
+                                                <td>Add Money</td>
+                                                <td>Referee G</td>
+                                                <td>2024-07-07</td>
+                                                <td><span class="text-success">Success</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+
+               
+            </div><!-- end row -->
+        </div>
+        <!-- container-fluid -->
+    </div>
+   
+
+    <footer class="footer footer-bg-cr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Sfitech
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by <a href="#!" class="text-decoration-underline">Sfitech Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

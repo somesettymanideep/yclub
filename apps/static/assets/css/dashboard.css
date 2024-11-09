@@ -1,0 +1,137 @@
+[data-bs-theme=dark] {
+    --bs-body-bg: #000!important;
+}
+.card {
+    --bs-card-bg: #141A30!important;
+    
+
+}
+
+:root [data-topbar=dark], [data-bs-theme=light] [data-topbar=dark] {
+    --bs-header-bg: #141A30!important;
+
+}
+.form-control {
+    background-color:#2A2F4D!important;
+}
+.btn-primary{
+    --bs-btn-bg: #3241FF;
+}
+.table>:not(caption)>*>* {
+    color: #fff!important;
+
+}
+
+[data-bs-theme=dark][data-sidebar=dark] {
+    --bs-sidebar-dark-bg:  #141A30!important;
+}
+.table{
+    --bs-table-bg:#141A30!important;
+    ;
+}
+.nav-tabs-customs .nav-item .nav-link.active {
+    background-color: #3241FF!important; 
+    color: #fff!important;
+    
+    
+   
+}
+.btn-width{
+    min-width:100px!important;
+    text-align: center!important;
+   
+
+}
+.border-radius-button{
+    
+    border: none!important;
+    padding:5px!important;
+    --bs-card-spacer-y: 1rem!important;
+
+}
+.bg-light-gray{
+    border: 1px solid #79747E!important;
+    background: #2A2F4D!important;
+   
+}
+
+.btn-secondary {
+    --bs-btn-bg: #2A2F4D!important;
+    
+}
+
+.grid-container {
+    display: grid!important;
+    grid-template-columns: repeat(5, 1fr)!important; /* 1fr divides the space equally */
+    gap: 0!important; /* No gap between items */
+}
+.grid-item {
+    text-align: center!important;
+}
+.bg-custom-card{
+    background: #2A2F4D!important;
+
+}
+.bg-payment{
+    background:#141A30!important;
+}
+.footer-bg-cr{
+    background: #141A30!important;
+    color: #fff!important;
+}
+.fintech-bg {
+    background-image: url("../images/users/bg-card-imk.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 150px!important;
+    border-radius: 10px;
+   
+   
+  }
+  .text-primary{
+    color: #3241FF!important;
+    
+  }
+  .utility-card{
+    max-width: 110px!important;
+  }
+ 
+  @media (min-width: 310px) and (max-width:576px) {
+    .utility-card{
+        max-width: 100%!important;
+      }
+     
+}
+.bg-clr{
+    background:#141A30!important;
+    border-radius: 30px!important;
+}
+.device-bg{
+    border: 1px solid #79747E!important;
+    background: #2A2F4D!important;
+
+}
+.bg-custom-device{
+    background: #394068!important;
+    border-radius: 5px!important;
+    border: 1px solid #79747E!important;
+}
+.merchant-card{
+    width: 300px!important;
+    border-radius: 20px!important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #3241FF!important;
+}
+
+.del-price{
+    margin-left: 1rem!important;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: var(--bs-btn-active-color);
+    background-color: #3241FF!important;
+    border-color: var(--bs-btn-active-border-color);
+}
+

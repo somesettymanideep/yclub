@@ -1,0 +1,703 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Dashboard|siftech {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+{% block content %}
+
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Settlements</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                <li class="breadcrumb-item active">Settlements</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                           
+                            <div class="row">
+                                <!-- First Column for Filters -->
+                                <div class="col-lg-6 mb-4">
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <div class="me-3">
+                                            <strong>Quick filters:</strong>
+                                        </div>
+                                        <button type="button" class="btn btn-primary me-3">All</button>
+                                        <button type="button" class="btn btn-secondary me-3">Date</button>
+                                        <button type="button" class="btn btn-secondary me-3">Newest</button>
+                                        <button type="button" class="btn btn-secondary">Oldest</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Second Column for Upload and Add New Vendor -->
+                                <div class="col-lg-6 mb-4">
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <button type="button" class="btn btn-primary me-2"><i class="bx bx-download label-icon me-2"></i>Upload File</button>
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#vendorModal" ><i class="bx bx-plus me-1"></i>Add New Vendor</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end rpw  -->
+                            <div class="modal fade" id="vendorModal" tabindex="-1" aria-labelledby="vendorModalLabel" aria-hidden="true" >
+                                <div class="modal-dialog" >
+                                    <div class="modal-content" style="background: #141A30;">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="vendorModalLabel">Add New Vendor</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body" >
+                                            <form>
+                                                <div class="mb-3">
+                                                    <label for="vendorName" class="form-label">Vendor Name</label>
+                                                    <input type="text" class="form-control" id="vendorName" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="unsettlementAmount" class="form-label">Unsettlement Amount</label>
+                                                    <input type="number" class="form-control" id="unsettlementAmount" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="settlementDate" class="form-label">Settlement Date</label>
+                                                    <input type="date" class="form-control" id="settlementDate" required>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save</button>
+                                            <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="addNewVendor()">Add Another Vendor</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>         
+
+                            <div class="table-responsive">
+                                <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                    <thead>
+                                        <tr class="bg-transparent">
+                                            <th style="width: 30px;">
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" name="check" class="form-check-input" id="checkAll">
+                                                    <label class="form-check-label" for="checkAll"></label>
+                                                </div>
+                                            </th>
+                                            <th style="width: 120px;">Date</th>
+                                            <th>VendorID</th>
+                                            <th>Acc Holder Name</th>
+                                            <th>Unsettled Balance</th>
+                                            <th>Next Date</th>
+                                            <th style="width: 150px;"></th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>01 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi001</a></td>
+                                            <td>John Doe</td>
+                                            <td>₹1,200</td>
+                                            <td>15 Jan, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                  
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 2 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>05 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi002</a></td>
+                                            <td>Jane Smith</td>
+                                            <td>₹3,450</td>
+                                            <td>20 Jan, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 3 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>10 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi003</a></td>
+                                            <td>Michael Johnson</td>
+                                            <td>₹2,780</td>
+                                            <td>25 Jan, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 4 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>15 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi004</a></td>
+                                            <td>Emily Davis</td>
+                                            <td>₹4,320</td>
+                                            <td>30 Jan, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 5 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>20 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi005</a></td>
+                                            <td>William Brown</td>
+                                            <td>₹5,600</td>
+                                            <td>04 Feb, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 6 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>25 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi006</a></td>
+                                            <td>Linda Martinez</td>
+                                            <td>₹2,150</td>
+                                            <td>09 Feb, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 7 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>30 Jan, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi007</a></td>
+                                            <td>Richard Garcia</td>
+                                            <td>₹3,900</td>
+                                            <td>14 Feb, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 8 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>05 Feb, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi008</a></td>
+                                            <td>Elizabeth Clark</td>
+                                            <td>₹1,800</td>
+                                            <td>19 Feb, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 9 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>10 Feb, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi009</a></td>
+                                            <td>Patricia Rodriguez</td>
+                                            <td>₹4,750</td>
+                                            <td>24 Feb, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 10 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>15 Feb, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi010</a></td>
+                                            <td>Barbara Lewis</td>
+                                            <td>₹5,900</td>
+                                            <td>01 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary waves-effect waves-light btn-sm" data-bs-toggle="modal" data-bs-target="#myModal" >Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 11 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>20 Feb, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi011</a></td>
+                                            <td>James Wilson</td>
+                                            <td>₹2,500</td>
+                                            <td>06 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-secondary btn-sm" onclick="showDetails('#Sifi015')">Settle Now</button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 12 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>25 Feb, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi012</a></td>
+                                            <td>David White</td>
+                                            <td>₹4,300</td>
+                                            <td>11 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 13 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>01 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi013</a></td>
+                                            <td>Charles Harris</td>
+                                            <td>₹5,500</td>
+                                            <td>16 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 14 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>05 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi014</a></td>
+                                            <td>Matthew Lopez</td>
+                                            <td>₹3,300</td>
+                                            <td>21 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 15 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>10 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi015</a></td>
+                                            <td>Christopher Lee</td>
+                                            <td>₹2,000</td>
+                                            <td>25 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 16 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>15 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi016</a></td>
+                                            <td>Daniel Walker</td>
+                                            <td>₹5,400</td>
+                                            <td>30 Mar, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 17 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>20 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi017</a></td>
+                                            <td>Andrew Young</td>
+                                            <td>₹4,100</td>
+                                            <td>04 Apr, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 18 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>25 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi018</a></td>
+                                            <td>Joshua Hall</td>
+                                            <td>₹3,700</td>
+                                            <td>09 Apr, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 19 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>30 Mar, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi019</a></td>
+                                            <td>Ryan Hernandez</td>
+                                            <td>₹5,800</td>
+                                            <td>14 Apr, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-success font-size-12">Active</div>
+                                            </td>
+                                        </tr>
+                                        <!-- Entry 20 -->
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>01 Apr, 2024</td>
+                                            <td><a href="javascript: void(0);" class="text-body fw-medium">#Sifi020</a></td>
+                                            <td>Jose Moore</td>
+                                            <td>₹4,500</td>
+                                            <td>16 Apr, 2024</td>
+                                            <td>
+                                                <div>
+                                                    <button type="button" class="btn btn-soft-light btn-sm w-xs waves-effect btn-label waves-light">
+                                                        <i class="bx bx-download label-icon"></i> Pdf
+                                                    </button>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-soft-danger font-size-12">Failed</div>
+                                            </td>
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end table responsive -->
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+    <div class="modal fade" id="entryDetailsModal" tabindex="-1" role="dialog" aria-labelledby="entryDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="entryDetailsModalLabel">Entry Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Replace with dynamic content using JavaScript -->
+                    <p id="entryDetailsContent">Loading details...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Settle Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <footer class="footer footer-bg-cr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Sfitech
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by <a href="#!" class="text-decoration-underline">Sfitech Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" data-bs-scroll="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background: #141A30;
+">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">On Demand Settlement</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>On Demand Settlement Details</h5>
+                
+              
+                    <div class="table-responsive">
+                        <table class="table table-nowrap align-middle mb-0">
+                           
+                            <tbody>
+                                <tr>
+                                  
+                                    <td>
+                                        
+                                        <p class="font-size-13 text-muted mb-0">Vendor ID </p>
+                                    </td>
+                                    <td class="text-end">hjktydggh12345</td>
+                                </tr>
+                                
+                                <tr>
+                                   
+                                    <td>
+                                        <p class="font-size-13 text-muted mb-0">Existing Vendor Balance </p>
+                                    </td>
+                                    <td class="text-end">₹20,000.00</td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td>
+                                        
+                                        <p class="font-size-13 text-muted mb-0">On Demand Service Charge </p>
+                                    </td>
+                                    <td class="text-end">₹300.00</td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td>
+                                        
+                                        <p class="font-size-13 text-muted mb-0">On Demand Service Tax</p>
+                                    </td>
+                                    <td class="text-end">₹0.50</td>
+                                </tr>
+                                <tr>
+                                  
+                                    <td>
+                                        
+                                        <p class="font-size-13 text-muted mb-0">Upcoming Settlement Time</p>
+                                    </td>
+                                    <td class="text-end">02 May 2024, 05.32 PM</td>
+                                </tr>
+                               
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary waves-effect waves-light">Settle Now</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

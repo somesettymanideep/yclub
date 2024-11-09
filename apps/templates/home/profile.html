@@ -1,0 +1,346 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Dashboard|siftech {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+{% block content %}
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Profile</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Contacts</a></li>
+                                <li class="breadcrumb-item active">Profile</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm order-2 order-sm-1">
+                                    <div class="d-flex align-items-center mt-3 mt-sm-0">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-xl me-3">
+                                                <img src="{% static 'assets/images/users/avatar-2.jpg' %}" alt="" class="img-fluid rounded-circle d-block">
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div>
+                                                <h5 class="font-size-22 mb-1">Phyllis Gatlin</h5>
+                                                <!-- <p class="text-muted font-size-13">Full Stack Developer</p> -->
+
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-auto order-1 order-sm-2">
+                                    <div class="d-flex align-items-start justify-content-end gap-2">
+                                        <div>
+                                            
+                                            <button type="button" class="btn btn-primary"><i class="me-1"></i> Save</button>
+                                        </div>
+                                        <div>
+                                            <div class="dropdown">
+                                                <button class="btn btn-link font-size-16 shadow-none text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bx bx-dots-horizontal-rounded"></i>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs-custom card-header-tabs border-top mt-4" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link px-3 active" data-bs-toggle="tab" href="#overview" role="tab">Overview</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="overview" role="tabpanel">
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <div>
+                                      
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-header bg-transparent">
+                                                    <h4 class="card-title">Personal Details</h4>
+                                                   
+                                                </div>
+                                                <div class="card-body">
+                                                    <form class="needs-validation" novalidate>
+                                                        <div class="row">
+                                                            <div class="col-lg-6">
+                                                        <div class="row">
+                                                           
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom01">First name</label>
+                                                                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                                                                    <div class="valid-feedback">
+                                                                        Looks good!
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom02">Last name</label>
+                                                                    <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                                                                    <div class="valid-feedback">
+                                                                        Looks good!
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                       
+                                                        </div>
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom06">Email ID</label>
+                                                                    <input type="email" class="form-control" id="validationCustom06" placeholder="Email ID" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid email.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom07">PAN</label>
+                                                                    <input type="text" class="form-control" id="validationCustom07" placeholder="PAN" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid PAN.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom08">Address</label>
+                                                                    <input type="text" class="form-control" id="validationCustom08" placeholder="Address" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid address.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom09">Building No</label>
+                                                                    <input type="text" class="form-control" id="validationCustom09" placeholder="District" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid Building NO
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom10">Street Name</label>
+                                                                    <input type="text" class="form-control" id="validationCustom10" placeholder="Street Name" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid street name.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom03">City</label>
+                                                                    <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid city.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom03">District</label>
+                                                                    <input type="text" class="form-control" id="validationCustom15" placeholder="District" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid District
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom04">State</label>
+                                                                    <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid state.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom05">Zip</label>
+                                                                    <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+                                                                    <div class="invalid-feedback">
+                                                                        Please provide a valid zip.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <div class="form-check">
+                                                                        <input type="checkbox" class="form-check-input" id="invalidCheck" required>
+                                                                        <label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+                                                                        <div class="invalid-feedback">
+                                                                            You must agree before submitting.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom11">Company Name</label>
+                                                                    <input type="text" class="form-control" id="validationCustom11" placeholder="Company Name" required>
+                                                                    <div class="invalid-feedback">Please provide a valid company name.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom12">Company Address</label>
+                                                                    <input type="text" class="form-control" id="validationCustom12" placeholder="Company Address" required>
+                                                                    <div class="invalid-feedback">Please provide a valid company address.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom13">Building No.</label>
+                                                                    <input type="text" class="form-control" id="validationCustom13" placeholder="Building No." required>
+                                                                    <div class="invalid-feedback">Please provide a valid building number.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom14">Street Name</label>
+                                                                    <input type="text" class="form-control" id="validationCustom14" placeholder="Street Name" required>
+                                                                    <div class="invalid-feedback">Please provide a valid street name.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom15">Company City</label>
+                                                                    <input type="text" class="form-control" id="validationCustom15" placeholder="Company City" required>
+                                                                    <div class="invalid-feedback">Please provide a valid company city.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom16">Company District</label>
+                                                                    <input type="text" class="form-control" id="validationCustom16" placeholder="Company District" required>
+                                                                    <div class="invalid-feedback">Please provide a valid company district.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom17">Company State</label>
+                                                                    <input type="text" class="form-control" id="validationCustom17" placeholder="Company State" required>
+                                                                    <div class="invalid-feedback">Please provide a valid company state.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label" for="validationCustom18">Company Pin Code</label>
+                                                                    <input type="text" class="form-control" id="validationCustom18" placeholder="Company Pin Code" required>
+                                                                    <div class="invalid-feedback">Please provide a valid company pin code.</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        
+                                                       
+                                                    </div>
+                                                        <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
+                                                    </div>
+                                                    </form>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- end card -->
+                                        </div> <!-- end col -->
+                                     
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+
+                           
+                        </div>
+                        <!-- end tab pane -->
+
+                    
+
+                      
+                    </div>
+                    <!-- end tab content -->
+                </div>
+                <!-- end col -->
+
+              
+            </div>
+            <!-- end row -->
+            
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+    
+    <footer class="footer footer-bg-cr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Sfitech
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by <a href="#!" class="text-decoration-underline">Sfitech Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

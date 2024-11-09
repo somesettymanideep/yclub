@@ -1,0 +1,82 @@
+{% extends 'layouts/base-full.html' %}
+{% load static %}
+{% block title %} Dashboard|login {% endblock title %}
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<link href="{% static 'assets/css/otp.css' %}" rel="stylesheet" type="text/css" />
+{% endblock stylesheets %}
+{% block content %}
+<div class="auth-page login-page-bg">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-xxl-7 col-lg-7 col-md-6  pt-md-4 p-4">
+                <div class="mb-4 mb-md-5 ">
+                    <a href="" class="d-block auth-logo">
+                        <img src="{% static 'assets/images/brands/logo-m.png' %}" alt="" class="img-fluid"> <span class="logo-txt"></span>
+                    </a>
+                </div>
+                <div class="d-flex flex-column  justify-content-center ">
+                    
+                    <div class="text-center">
+
+                        <h5 class="mb-0">One Place For Everything Banking</h5>
+                        <p class="text-muted mt-2">Enter the new era of business banking. Automate and simplify all your business banking operations with our unified interface.</p>
+                    </div>
+                    <!-- end bubble effect -->
+                   <div class="pt-0 px-5">
+                        
+                            <img src="{% static 'assets/images/brands/homepage-desgin.png' %}" alt="" class="img-fluid d-block">
+                           
+                        </div>       
+                        
+                </div>
+            </div>
+           
+            <div class="col-xxl-5 col-lg-5 col-md-6">
+                <div class="auth-full-page-content d-flex p-sm-5 p-4">
+                    <div class="w-100">
+                        <div class="d-flex flex-column h-100">
+                            
+                            <div class="auth-content my-auto">
+                                <div class="text-center">
+                                    <h5 class="mb-0">Verify your otp</h5>
+                                    <p class="text-muted mt-2">Securely Login your Instantpay Business account</p>
+                                </div>
+                                <form class="mt-4 pt-2">
+                                    {% csrf_token %}
+                                    <div id="otp-form">
+                                        <input type="text" class="otp-input" maxlength="1">
+                                        <input type="text" class="otp-input" maxlength="1">
+                                        <input type="text" class="otp-input" maxlength="1">
+                                        <input type="text" class="otp-input" maxlength="1">
+                                    </div>
+
+                                  <div class="mb-3 mt-4 mx-4">
+                                      <button class="btn btn-primary mx-3" onclick="verify_btn()" type="button">Verify OTP</button>
+                                  </div>
+                                        
+                                   
+                                </form>
+
+
+                                <div class="mt-5 text-center">
+                                    <p class="text-muted mb-0">Don't get otp ? <a href="/" class="text-primary fw-semibold"> Request OTP</a> </p>
+                                </div>
+                               
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}
+{% block javascripts %}
+<script src="{% static 'assets/js/authentication/verify_otp.js' %}"></script>
+{% endblock javascripts %}

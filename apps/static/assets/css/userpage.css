@@ -1,0 +1,50 @@
+/* .login-page-bg{
+    background-color: #000!important;
+} */
+
+[data-bs-theme=dark] {
+    --bs-body-bg: #000;
+}
+.btn-primary{
+    --bs-btn-bg: #3241FF;
+}
+.form-control {
+    background-color:#2A2F4D!important;
+}
+[data-bs-theme=dark] .btn-light {
+    background-color:#2A2F4D!important;
+}
+.auth-bg {
+    background:#0000!important ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.auth-content{
+    background-color: #141A30;
+    border-radius: 5%;
+    padding: 40px;
+
+}
+.text-muted {
+    color: #fff!important;
+}
+.form-label {
+    color: #fff!important;
+}
+.text-primary {
+    color: #3241FF!important ;
+}
+.img-fix{
+    max-width: 450px!important;
+}
+
+@media (min-width: 310px) and (max-width:576px) {
+    .img-fix{
+        max-width: 100%!important;
+    }
+
+}
+.bg-card-colr{
+    background-color: #2A2F4D!important;
+}

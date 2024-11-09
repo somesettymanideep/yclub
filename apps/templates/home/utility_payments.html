@@ -1,0 +1,459 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} utility payments |siftech {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+{% block content %}
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-lg-3 col-xl-3 col-12">
+                    <div>
+                        <h6>Balance</h6>
+                    </div>
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h1 class="mb-sm-0 font-size-25">₹ 60,00,000</h1>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-9 col-lg-9">
+                    <div class="row" >
+                        <div class="col-sm-12 col-xl-2 border shadow-lg p-3 mb-5 bg-body rounded mx-1 utility-card" >
+                            <div class="col-xl-2 text-center w-100">
+                                <i class="bx bx-mobile-alt   align-middle me-1 mb-2" style="font-size: 40px;"></i> 
+                                <h6 >Mobile Recharge</h6>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xl-2 border shadow-lg p-3 mb-5 bg-body rounded mx-1 utility-card"  >
+                            <div class="col-xl-2 text-center w-100">
+                                <i class=" bx bx-desktop   align-middle me-1 mb-2" style="font-size: 40px;"></i> 
+                                <h6 >TV/DTH Recharge</h6>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xl-2 border shadow-lg p-3 mb-5 bg-body rounded mx-1 utility-card"  >
+                            <div class="col-xl-2 text-center w-100">
+                                <i class=" bx bx-bulb   align-middle me-1 mb-2" style="font-size: 40px;"></i> 
+                                <h6 >Electricity</h6>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xl-2 border shadow-lg p-3 mb-5 bg-body rounded mx-1 utility-card" >
+                            <div class="col-xl-2 text-center w-100">
+                                <i class="mdi mdi-router-wireless  align-middle me-1 mb-2" style="font-size: 40px;"></i> 
+                                <h6 >Broadband</h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xl-2 border shadow-lg p-3 mb-5 bg-body rounded mx-1 utility-card"  >
+                            <div class="col-xl-2 text-center w-100">
+                                <i class="mdi mdi-gas-cylinder  align-middle me-1 mb-2" style="font-size: 40px;"></i> 
+                                <h6 >Gas</h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-xl-2 border shadow-lg p-3 mb-5 bg-body rounded mx-1 utility-card" >
+                            <div class="col-xl-2 text-center w-100">
+                                <i class="mdi mdi-water-pump   align-middle me-1 mb-2" style="font-size: 40px;"></i> 
+                                <h6 >Water Bill</h6>
+                            </div>
+                        </div>
+                        
+                        
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        
+           
+            <div class="row">
+                <div class="col-xl-4">
+                    <div class="card">
+                        <div class="card-header align-items-center d-flex bg-payment">
+                            <h4 class="card-title mb-0 flex-grow-1">Mobile Recharge</h4>
+                        </div><!-- end card header -->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="buy-tab" role="tabpanel">
+                                    <form class="mt-2 pt-2" action="index.html">
+                                        <div class="mb-3">
+                                            <label class="form-label">Mobile Number</label>
+                                            <input type="text" class="form-control" placeholder="Enter mobile number" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Network</label>
+                                            <select required class="form-control form-select">
+                                                <option value="jio">Jio</option>
+                                                <option value="airtel">Airtel</option>
+                                                <option value="bsnl">BSNL</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Plans</label>
+                                            <select required class="form-control form-select">
+                                                <option value="plan1">₹199 - 1 month - Unlimited Calls</option>
+                                                <option value="plan2">₹399 - 3 months - Unlimited Calls</option>
+                                                <option value="plan3">₹599 - 6 months - Unlimited Calls</option>
+                                                <option value="plan4">₹999 - 12 months - Unlimited Calls</option>
+                                            </select>
+                                        </div>
+
+                                        <h4 class="mb-3 mt-2">Payble Amount : ₹199</h4>
+                                        <div class="mb-3">
+                                            <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Pay via UPI</button>
+                                        </div>
+                                    </form>
+                                    <!-- <div>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">+91 </span>
+                                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                          </div>
+                                        <div class="form-group mb-3">
+                                            <label>Network</label>
+                                            <select class="form-select">
+                                                <option>Airtel</option>
+                                                <option>Jio</option>
+                                                <option>Idea</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label>Select Plan</label>
+                                            <select class="form-select">
+                                                <option>₹599 -3 Months, Unlimited Call &2GB/d</option>
+                                                <option>₹299 -1 Months, Unlimited Call &2GB/d</option>
+                                            </select>
+                                        </div>
+
+                                        <h3 class="mb-3 mt-3">Payble Amount :₹599</h3>
+
+                                        <div class="mb-3">
+                                            <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Pay Via UPI </button>
+                                        </div>
+
+                                    </div> -->
+                                </div>
+                                <!-- end tab pane -->
+                                <div class="tab-pane" id="sell-tab" role="tabpanel">
+                                    <div class="float-end ms-2">
+                                        <h5 class="font-size-14"><i class="bx bx-wallet text-primary font-size-16 align-middle me-1"></i> <a href="#!" class="text-reset text-decoration-underline">$4235.23</a></h5>
+                                    </div>
+                                    <h5 class="font-size-14 mb-4">Sell Coins</h5>
+
+                                    <div>
+
+                                        <div class="form-group mb-3">
+                                            <label>Wallet ID :</label>
+                                            <input type="email" class="form-control" placeholder="1cvb254ugxvfcd280ki">
+                                        </div>
+
+                                        <div>
+                                            
+                                            <div class="input-group mb-3">
+                                            
+                                                
+                                                
+                                                <input type="text" class="form-control" placeholder="$23,754.25">
+                                                
+                                              
+                                            </div>
+
+                                            <div class="input-group mb-3">
+                                                <label class="input-group-text">Total</label>
+                                                <input type="text" class="form-control" placeholder="$6,852.41">
+                                            </div>
+                                        </div>  
+
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-danger w-md">Sell Coin</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end tab pane -->
+                            </div>
+                            <!-- end tab content -->
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                 <!-- end col -->
+                 <div class="col-xl-8  card">
+                    <div class="card-header align-items-center d-flex bg-transparent">
+                        <h4 class="card-title mb-0 flex-grow-1">Payment History</h4>
+                    </div><!-- end card header -->
+                    <div class="row mt-4 ">
+                       
+                        <!-- end col -->
+                        <div class="col-xl-12 col-md-12">
+                            <!-- card -->
+                            <div class="card card-h-100 bg-custom-card ">
+                                <div class="card-body">
+                                    
+                                    
+                                    <div class="d-flex  flex-wrap justify-content-center align-items-center ">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-4 col-12 d-flex  flex-wrap  align-items-center mb-2">
+                                        <h5 class="font-size-22">Pay</h5>
+                                        <p class="font-size-18">Tran ID: 12345678903548</p>
+                                       
+                                        
+                                    </div>
+                                    <div class="col-xl-4 col-md-4 col-12 d-flex  flex-wrap justify-content-center align-items-center  mb-2">
+                                       
+                                        <p>Lorem Ipsum has been the industry's standard dummy  </p>
+                                           
+                                        </div>
+                                        <div class="col-xl-4 col-md-4 col-12 d-flex  flex-wrap justify-content-end mb-2">
+                                       
+                                            <p class="font-size-16">21- May - 24
+                                                13:25 PM</p>
+                                                <h5 class="font-size-22">₹6000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                </div>
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+        
+                       <!-- end col -->
+                       <div class="col-xl-12 col-md-12">
+                        <!-- card -->
+                        <div class="card card-h-100 bg-custom-card ">
+                            <div class="card-body">
+                                
+                                
+                                <div class="d-flex  flex-wrap justify-content-center align-items-center ">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-md-4 d-flex  flex-wrap  align-items-center mb-2">
+                                    <h5 class="font-size-22">Pay</h5>
+                                    <p class="font-size-18">Tran ID: 12345678903548</p>
+                                   
+                                    
+                                </div>
+                                <div class="col-xl-4 col-md-4 d-flex  flex-wrap justify-content-center align-items-center  mb-2">
+                                   
+                                    <p>Lorem Ipsum has been the industry's standard dummy  </p>
+                                       
+                                    </div>
+                                    <div class="col-xl-4 col-md-4 d-flex  flex-wrap justify-content-end mb-2">
+                                   
+                                        <p class="font-size-16">21- May - 24
+                                            13:25 PM</p>
+                                            <h5 class="font-size-22">₹6000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                
+                                
+                            </div>
+                        </div><!-- end card -->
+                    </div><!-- end col -->
+                        <!-- end col -->
+                        <div class="col-xl-12 col-md-12">
+                            <!-- card -->
+                            <div class="card card-h-100 bg-custom-card ">
+                                <div class="card-body">
+                                    
+                                    
+                                    <div class="d-flex  flex-wrap justify-content-center align-items-center ">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-4 d-flex  flex-wrap  align-items-center mb-2">
+                                        <h5 class="font-size-22">Pay</h5>
+                                        <p class="font-size-18">Tran ID: 12345678903548</p>
+                                       
+                                        
+                                    </div>
+                                    <div class="col-xl-4 col-md-4 d-flex  flex-wrap justify-content-center align-items-center  mb-2">
+                                       
+                                        <p>Lorem Ipsum has been the industry's standard dummy  </p>
+                                           
+                                        </div>
+                                        <div class="col-xl-4 col-md-4 d-flex  flex-wrap justify-content-end mb-2">
+                                       
+                                            <p class="font-size-16">21- May - 24
+                                                13:25 PM</p>
+                                                <h5 class="font-size-22">₹6000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                </div>
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+                        <!-- end col -->
+                        <div class="col-xl-12 col-md-12">
+                            <!-- card -->
+                            <div class="card card-h-100 bg-custom-card ">
+                                <div class="card-body">
+                                    
+                                    
+                                    <div class="d-flex  flex-wrap justify-content-center align-items-center ">
+                                        <div class="row">
+                                            <div class="col-xl-4 col-md-4 d-flex  flex-wrap  align-items-center mb-2">
+                                        <h5 class="font-size-22">Pay</h5>
+                                        <p class="font-size-18">Tran ID: 12345678903548</p>
+                                       
+                                        
+                                    </div>
+                                    <div class="col-xl-4 col-md-4 d-flex  flex-wrap justify-content-center align-items-center  mb-2">
+                                       
+                                        <p>Lorem Ipsum has been the industry's standard dummy  </p>
+                                           
+                                        </div>
+                                        <div class="col-xl-4 col-md-4 d-flex  flex-wrap justify-content-end mb-2">
+                                       
+                                            <p class="font-size-16">21- May - 24
+                                                13:25 PM</p>
+                                                <h5 class="font-size-22">₹6000</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                </div>
+                            </div><!-- end card -->
+                        </div><!-- end col -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end col -->
+    
+                <!-- <div class="col-xl-8">
+                    <div class="card">
+                        <div class="card-header align-items-center d-flex bg-transparent">
+                            <h4 class="card-title mb-0 flex-grow-1">Payment History</h4>
+                        </div>
+
+                        <div class="card-body px-0">
+                            
+                                    <div class="table-responsive px-3 simplebar-scrollable-y" data-simplebar="init" style="max-height: 352px;"><div class="simplebar-wrapper" style="margin: 0px -16px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 16px;">
+                                        <table class="table align-middle table-nowrap table-borderless">
+                                            <tbody>
+                                                <tr class="shadow-lg p-3 mb-5 bg-body rounded bg-dark">
+                                                    <td>
+                                                        <div class="font-size-22 text-success">
+                                                            Pay
+                                                        </div>
+                                                        <div>
+                                                            <h6>Tran ID : 12134567892</h6>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-14 mb-1">Lorem ipsum dolor.</h5>
+                                                           
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <h6>21-may-24</h6>
+                                                            <span>13.25 PM</span>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr class="shadow-lg p-3 mb-5 bg-body rounded bg-dark">
+                                                    <td>
+                                                        <div class="font-size-22 text-success">
+                                                            Pay
+                                                        </div>
+                                                        <div>
+                                                            <h6>Tran ID : 12134567892</h6>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-14 mb-1">Lorem ipsum dolor.</h5>
+                                                           
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <h6>21-may-24</h6>
+                                                            <span>13.25 PM</span>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr class="shadow-lg p-3 mb-5 bg-body rounded bg-dark">
+                                                    <td>
+                                                        <div class="font-size-22 text-success">
+                                                            Pay
+                                                        </div>
+                                                        <div>
+                                                            <h6>Tran ID : 12134567892</h6>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-14 mb-1">Lorem ipsum dolor.</h5>
+                                                           
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <h6>21-may-24</h6>
+                                                            <span>13.25 PM</span>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                                <tr class="shadow-lg p-3 mb-5 bg-body rounded bg-dark">
+                                                    <td>
+                                                        <div class="font-size-22 text-success">
+                                                            Pay
+                                                        </div>
+                                                        <div>
+                                                            <h6>Tran ID : 12134567892</h6>
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div>
+                                                            <h5 class="font-size-14 mb-1">Lorem ipsum dolor.</h5>
+                                                           
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="text-end">
+                                                            <h6>21-may-24</h6>
+                                                            <span>13.25 PM</span>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div></div></div></div><div class="simplebar-placeholder" style="width: 412px; height: 456px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 271px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+                                                            
+                                               
+                        </div>                     
+                    </div>                  
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

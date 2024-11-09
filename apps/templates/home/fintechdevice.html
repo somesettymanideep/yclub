@@ -1,0 +1,378 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Dashboard|siftech {% endblock title %}
+
+
+
+{% block content %}
+
+  <!-- ============================================================== -->
+  <div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Merchant devices</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                <li class="breadcrumb-item active">Merchant devices</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card merchant-card " >
+                        <div class="card-body p-0">
+                            <ul class="nav nav-pills nav-justified " id="pills-tab" role="tablist">
+                            <li class="nav-item waves-effect waves-light   btn-rounded">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#overview"  role="tab">
+                                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                                    <span class="d-none d-sm-block">QR</span> 
+                                </a>
+                            </li>
+                            <li class="nav-item waves-effect waves-light btn-rounded">
+                                <a class="nav-link" data-bs-toggle="tab" href="#about" role="tab">
+                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                                    <span class="d-none d-sm-block">Swipe</span> 
+                                </a>
+                            </li>
+                            </ul>
+
+                           
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="overview" role="tabpanel">
+                            <div class="card">
+                               
+                                <div class="card-body">
+                                    <div>
+                                        <div class="pb-3">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <div>
+                                                        <img src="{% static 'assets/images/users/qr-scanner.png' %}" alt="" class="img-fluid d-block">
+                                                    </div>
+                                                    <div class=" col-lg-12 device-bg card p-1 mb-xl-0 mt-4">
+                                                        <div class="row p-3">
+                                                            <div class="col-lg-6  col-12 d-flex flex-column justify-content-center align-items-center">
+                                                                <img src="{% static 'assets/images/users/2.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                                    <p class="font-size-15 text-white text-center">Voice Payment
+                                                                        Confirmation</p>
+                                                                   
+                                                                
+                                                            </div>
+                                                            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                                                                <img src="{% static 'assets/images/users/1.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                                <p class="font-size-15 text-white text-center">Available in 11
+                                                                    Languages</p>
+                                                            </div>
+                                                            <div class="col-lg-6 d-flex flex-wrap flex-column justify-content-center align-items-center">
+                                                                <img src="{% static 'assets/images/users/4.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                                <p class="font-size-15 text-white text-center">Up to 7- day
+                                                                    battery life</p>
+                                                               
+                                                            
+                                                        </div>
+                                                        <div class="col-lg-6  d-flex flex-wrap flex-column justify-content-center align-items-center ">
+                                                            <img src="{% static 'assets/images/users/3.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                            <p class="font-size-15 text-white text-center">5G Network
+                                                                Connectivity</p>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                       
+    
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-8  card device-bg p-4">
+                                                    
+                                                    <div class="row mt-4 ">
+                                                       
+                                                            
+                                                         <div class="col-xl-12 col-md-12 d-flex flex-column flex-wrap   mb-2">
+                                                            <h5 class="font-size-22">Soundbox 3.1 5G</h5>
+                                                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                                            <h5 class="font-size-24">₹299<del class="me-3 del-price font-size-15">700</del><span class="font-size-15 text-success">50% off</span></h5>
+                                                            
+                                                            <button type="button" class="btn btn-primary w-30">Book Now For ₹299</button>  
+                                                        </div>
+                                                            <p class="font-size-18">Rent: ₹150/Month</p>
+                                                           
+                                                           
+                                                        </div>
+                                                        
+                                                            
+                                                           
+                                                       
+                                                        <!-- end col -->
+                                                        <div class="col-xl-12 col-md-12">
+                                                            <!-- card -->
+                                                            <div class="card card-h-100 bg-custom-device " >
+                                                                <div class="card-body">
+                                                                    
+                                                                    
+                                                                    <div class="d-flex  flex-wrap  align-items-center ">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12 col-md-12 col-12 d-flex flex-column  flex-wrap  mb-2" >
+                                                                        <h5 class="font-size-22">Choose SoundBox Language</h5>
+                                                                        <p class="font-size-16">Payment alerts will be played in selected language</p>
+                                                                        <!-- <div class="bg-clr p-1 d-flex flex-wrap justify-content-center align-items-center">
+                                                                            <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">English</button> 
+                                                                            <p class="font-size-16 mx-2">हिन्दी</p>
+                                                                            <p class="font-size-16 mx-2">தமிழ்</p>
+                                                                            <p class="font-size-16 mx-2">View more</p>
+                                                                        </div> -->
+                                                                        <div class="d-flex flex-wrap gap-3 ">
+                                                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                                                                                <label class="btn btn-secondary activate" for="btnradio1">English</label>
+                                                                              
+                                                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                                                                <label class="btn btn-secondary" for="btnradio2">हिन्दी</label>
+                                                                              
+                                                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                                                                                <label class="btn btn-secondary" for="btnradio3">தமிழ்</label>
+
+                                                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" >
+                                                                                <label class="btn btn-secondary" for="btnradio4">View More</label>
+
+                                                                            </div>
+                            
+                                                                            
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                    
+                                                                       
+                                                                        </div>
+                                                                    </div>
+                                                                   
+                                                                    
+                                                                    
+                                                                </div>
+                                                            </div><!-- end card -->
+                                                        </div><!-- end col -->
+                                        
+                                                       <!-- end col -->
+                                                       <div class="col-xl-12 col-md-12">
+                                                        <!-- card -->
+                                                        <div class="card card-h-100 bg-custom-device ">
+                                                            <div class="card-body">
+                                                                
+                                                                
+                                                                <div class="d-flex  flex-wrap  align-items-center ">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-12 col-md-12 d-flex flex-column flex-wrap   mb-2">
+                                                                    <h5 class="font-size-22">Delivery Address</h5>
+                                                                    <p class="font-size-18">123, East Street, Main Road, District, State,-123 456</p>
+                                                                   
+                                                                    <button type="button" class="btn btn-primary w-50">Edit Address</button>  
+                                                                </div>
+                                                                
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                
+                                                                
+                                                            </div>
+                                                        </div><!-- end card -->
+                                                    </div><!-- end col -->
+                                                        <!-- end col -->
+                                                      
+                                                      
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
+
+                        </div>
+                        <!-- end tab pane -->
+
+                        <div class="tab-pane" id="about" role="tabpanel">
+                            <div class="card">
+                               
+                                <div class="card-body">
+                                    <div>
+                                        <div class="pb-3">
+                                            <div class="row">
+                                                <div class="col-xl-4">
+                                                    <div>
+                                                        <img src="{% static 'assets/images/flags/swipe.png' %}" alt="" class="img-fluid d-block">
+                                                    </div>
+                                                    <div class=" col-lg-12 device-bg card p-1 mb-xl-0 mt-4">
+                                                        <div class="row p-3">
+                                                            <div class="col-lg-6  col-12 d-flex flex-column justify-content-center align-items-center">
+                                                                <img src="{% static 'assets/images/flags/1.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                                    
+                                                                   
+                                                                
+                                                            </div>
+                                                            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                                                                <img src="{% static 'assets/images/flags/2.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                                
+                                                            </div>
+                                                            <div class="col-lg-6 d-flex flex-wrap flex-column justify-content-center align-items-center">
+                                                                <img src="{% static 'assets/images/flags/3.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                               
+                                                               
+                                                            
+                                                        </div>
+                                                        <div class="col-lg-6  d-flex flex-wrap flex-column justify-content-center align-items-center ">
+                                                            <img src="{% static 'assets/images/flags/select2/card.png' %}" alt="" class="img-fluid d-block mb-2">
+                                                            <p class="font-size-15 text-white text-center">Credit card
+                                                                </p>
+                                                        </div>
+                                                        </div>
+                                                        
+                                                       
+    
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-8  card device-bg p-4">
+                                                    
+                                                    <div class="row mt-4 ">
+                                                       
+                                                            
+                                                         <div class="col-xl-12 col-md-12 d-flex flex-column flex-wrap   mb-2">
+                                                            <h5 class="font-size-22">Card Swipe Machine</h5>
+                                                            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                                            <h5>₹1299<del class="me-3 del-price font-size-15">2700</del><span class="font-size-15 text-success">50% off</span></h5>
+                                                            <button type="button" class="btn btn-primary w-30">Book Now For ₹1299</button>  
+                                                        </div>
+                                                            <p class="font-size-18">Rent: ₹350/Month</p>
+                                                           
+                                                           
+                                                        </div>
+                                                        
+                                                            
+                                                           
+                                                       
+                                                       
+                                        
+                                                       <!-- end col -->
+                                                       <div class="col-xl-12 col-md-12   ">
+                                                        <!-- card -->
+                                                        <div class="card card-h-100 bg-custom-device ">
+                                                            <div class="card-body">
+                                                                
+                                                                
+                                                                <div class="d-flex  flex-wrap  align-items-center ">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-12 col-md-12 d-flex flex-column flex-wrap   mb-2">
+                                                                    <h5 class="font-size-22">Delivery Address</h5>
+                                                                    <p class="font-size-18">123, East Street, Main Road, District, State,-123 456</p>
+                                                                   
+                                                                    <button type="button" class="btn btn-primary w-50">Edit Address</button>  
+                                                                </div>
+                                                                
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                
+                                                                
+                                                            </div>
+                                                        </div><!-- end card -->
+                                                    </div><!-- end col -->
+                                                        <!-- end col -->
+                                                       <!-- end col -->
+                                                       <div class="col-xl-12 col-md-12 ">
+                                                        <!-- card -->
+                                                        
+                                                                
+                                                                
+                                                                <div class="d-flex  flex-wrap  align-items-center ">
+                                                                    <div class="row">
+                                                                        <div class="col-xl-12 col-md-12 col-12 d-flex flex-column  flex-wrap mt-3  mb-2" >
+                                                                    <h5 class="font-size-16">Note :</h5>
+                                                                    <p class="font-size-16">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+                                                                   
+                                                                    
+                                                                </div>
+                                                                
+                                                                   
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                                
+                                                                
+                                                          
+                                                    </div><!-- end col -->
+                                                      
+                                                    </div>
+                                                    <!-- end row -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                        </div>
+                        <!-- end tab pane -->
+
+                      
+                    </div>
+                    <!-- end tab content -->
+                </div>
+                <!-- end col -->
+
+                
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+            
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+    
+    <footer class="footer footer-bg-cr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Sfitech
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by <a href="#!" class="text-decoration-underline">Sfitech Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- end main content-->
+
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

@@ -1,0 +1,141 @@
+{% load static %}
+<!-- JAVASCRIPT -->
+<script src="{% static 'assets/libs/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/libs/metismenu/metisMenu.min.js' %}"></script>
+<script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+<script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
+<script src="{% static 'assets/libs/feather-icons/feather.min.js' %}"></script>
+
+
+<!-- pace js -->
+<script src="{% static 'assets/libs/pace-js/pace.min.js' %}"></script>
+<script src="{% static 'assets/js/pages/invoices-list.init.js' %}"></script>
+<script src="{% static 'assets/libs/flatpickr/flatpickr.min.js' %}"></script>
+<!-- apexcharts -->
+<script src="{% static 'assets/libs/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static 'assets/js/pages/apexcharts.init.js' %}"></script>
+<!-- Plugins js-->
+<script src="{% static 'assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script
+        src="{% static 'assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- dashboard init -->
+<script src="{% static 'assets/js/pages/dashboard.init.js' %}"></script>
+
+<script src="{% static 'assets/js/app.js' %}"></script>
+
+<!-- Required datatable js -->
+<script src="{% static 'assets/libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/libs/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'assets/libs/pdfmake/build/pdfmake.min.js' %}"></script>
+<script src="{% static 'assets/libs/pdfmake/build/vfs_fonts.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/js/pages/datatables.init.js' %}"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script> -->
+<script>
+        feather.replace();
+</script>
+
+<script>
+        function showDetails(entryId) {
+                // Here you can fetch details using AJAX or directly update modal content
+                // For simplicity, replacing content with static text
+                var entryDetails = "Invoice ID: " + entryId + "<br>"
+                        + "Date: 10 Mar, 2024<br>"
+                        + "Account Holder: Christopher Lee<br>"
+                        + "Amount: $2,000<br>"
+                        + "Upcoming Settlement Due: 25 Mar, 2024<br>"
+                        + "Status: Active<br>";
+
+                document.getElementById("entryDetailsContent").innerHTML = entryDetails;
+                $('#entryDetailsModal').modal('show');
+        }
+</script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var options = {
+                series: [60, 35, 15],
+                chart: {
+                    type: 'donut',
+                    height: 450 // Increased the height
+                },
+                labels: ['Income', 'Outcome', 'Profit'],
+                colors: ['#2ab57d', '#5156be', '#fd625e', '#4ba6ef', '#ffbf53'],
+                legend: {
+                    position: 'bottom',  // Placing the legend below the chart
+                    horizontalAlign: 'center',  // Aligning the legend to the center
+                    offsetY: 10  // Adding some offset for better spacing
+                },
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 300
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }]
+            };
+    
+            var chart = new ApexCharts(document.querySelector("#performance_chart"), options);
+            chart.render();
+        });
+    </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var options = {
+            chart: {
+                height: 350,
+                type: 'line'
+            },
+            series: [{
+                name: 'Income',
+                data: [3, 2.7, 3.5, 2.0, 4.0, 1.8, 2.2, 0.5, 1.5, 3.0, 2.5, 2.0]
+            }, {
+                name: 'Spending',
+                data: [3, 2.7, 2.1, 2.0, 1.5, 1.0, 2.5, 3.0, 1.2, 2.1, 2.7, 3.0]
+            }],
+            xaxis: {
+                categories: ['10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM']
+            },
+            yaxis: {
+                min: 0,
+                max: 6,
+                tickAmount: 6,
+                title: {
+                    text: 'Amount'
+                },
+                labels: {
+                    formatter: function (value) {
+                        return value + 'k';
+                    }
+                }
+            },
+            colors: ['#5156be', '#2ab57d'],
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            title: {
+                text: 'Income and Spending',
+                align: 'left'
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart_datalabel"), options);
+        chart.render();
+    });
+</script>

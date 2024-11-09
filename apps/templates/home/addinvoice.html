@@ -1,0 +1,278 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Dashboard|siftech {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+{% block content %}
+
+ <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0 font-size-18">AddInovice</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                            <li class="breadcrumb-item active">AddInovice</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+                        
+                        
+
+                      
+
+                     
+
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-header bg-transparent align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Invoice Details</h4>
+                                        
+                                    </div><!-- end card header -->
+
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="buy-tab" role="tabpanel">
+                                               
+                                                <div>
+                                                    <!-- Name Input -->
+                                                    <div class="form-group mb-3 col-12">
+                                                        <label>Name</label>
+                                                        <input type="text" class="form-control" placeholder="Name">
+                                                    </div>
+                                                
+                                                    <!-- Subject Select -->
+                                                    <div class="form-group mb-3 col-12">
+                                                        <label>Subject</label>
+                                                        <select class="form-select">
+                                                            <option>Service Jan Month</option>
+                                                            <option>Service Feb Month</option>
+                                                            <option>Service Mar Month</option>
+                                                            <option>Service Apr Month</option>
+                                                            <option>Service May Month</option>
+                                                            <option>Service Jun Month</option>
+                                                            <option>Service Jul Month</option>
+                                                            <option>Service Aug Month</option>
+                                                            <option>Service Sep Month</option>
+                                                            <option>Service Oct Month</option>
+                                                            <option>Service Nov Month</option>
+                                                            <option>Service Dec Month</option>
+                                                        </select>
+                                                    </div>
+                                                
+                                                    <!-- Due Date Picker -->
+                                                    <div class="form-group mb-3 col-12">
+                                                        <label>Due Date</label>
+                                                        <input type="text" class="form-control" placeholder="dd/mm/yyyy" onfocus="(this.type='date')">
+                                                    </div>
+                                                
+                                                    <!-- Currency Input -->
+                                                    <div class="form-group mb-3 col-12">
+                                                        <label>Currency</label>
+                                                        <input type="text" class="form-control" placeholder="1,000">
+                                                    </div>
+                                                
+                                                    <!-- Create Row -->
+                                                    <div class="row">
+                                                        <!-- Product Item Heading -->
+                                                        <div class="col-6 my-3">
+                                                            <h4>Product Item</h4>
+                                                        </div>
+                                                
+                                                        <!-- Add Product Button -->
+                                                        <div class="col-6 text-end my-3">
+                                                            <button type="button" class="btn btn-primary">Add Product</button>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <!-- Item Suggestions Search Bar -->
+                                                    <div class="form-group mb-3 col-12">
+                                                        <label>Item </label>
+                                                        <input type="text" class="form-control" placeholder="Enter product item" list="suggestions">
+                                                        <datalist id="suggestions">
+                                                            <!-- Add your suggestions here -->
+                                                            <option value="Product 1">
+                                                            <option value="Product 2">
+                                                            <option value="Product 3">
+                                                        </datalist>
+                                                    </div>
+                                                
+                                                   
+                                                </div>
+                                                
+                                                
+                                                
+                                            </div>
+                                           
+                                        </div>
+                                        <!-- end tab content -->
+                                    </div>
+                                    <!-- end card body -->
+                                     
+                                </div>
+                                <!-- end card -->
+                                  <!-- Cancel and Save Buttons -->
+                                  <div class="text-end mt-4">
+                                    <button type="button" class="btn btn-secondary me-2">Cancel</button>
+                                    <button type="button" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                            <!-- end col -->
+                            
+                            <div class="col-xl-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="invoice-title">
+                                            <div class="d-flex align-items-start">
+                                                <!-- <div class="flex-grow-1">
+                                                    <div class="mb-4">
+                                                        <img src="assets/images/logo-sm.svg" alt="" height="24"><span class="logo-txt">Minia</span>
+                                                    </div>
+                                                </div> -->
+                                                <div class="flex-shrink-0">
+                                                    <div class="mb-4">
+                                                        <h4 class="float-end font-size-16">Invoice # 12345</h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+
+                                            <p class="mb-1">1874 County Line Road City, FL 33566</p>
+                                            <p class="mb-1"><i class="mdi mdi-email align-middle me-1"></i> abc@123.com</p>
+                                            <p><i class="mdi mdi-phone align-middle me-1"></i> 012-345-6789</p>
+                                        </div>
+                                        <hr class="my-4">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div>
+                                                    <h5 class="font-size-15 mb-3">Billed To:</h5>
+                                                    <h5 class="font-size-14 mb-2">Richard Saul</h5>
+                                                    <p class="mb-1">1208 Sherwood Circle
+                                                        Lafayette, LA 70506</p>
+                                                    <p class="mb-1">RichardSaul@rhyta.com</p>
+                                                    <p>337-256-9134</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div>
+                                                    <div>
+                                                        <h5 class="font-size-15">Order Date:</h5>
+                                                        <p>February 16, 2020</p>
+                                                    </div>
+                                                    
+                                                    <div class="mt-4">
+                                                        <h5 class="font-size-15">Payment Method:</h5>
+                                                        <p class="mb-1">Visa ending **** 4242</p>
+                                                        <p>richards@email.com</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="py-2 mt-3">
+                                            <h5 class="font-size-15">Order summary</h5>
+                                        </div>
+                                        <div class="p-4 border rounded">
+                                            <div class="table-responsive">
+                                                <table class="table table-nowrap align-middle mb-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 70px;">No.</th>
+                                                            <th>Item</th>
+                                                            <th class="text-end" style="width: 120px;">Price</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">01</th>
+                                                            <td>
+                                                                <h5 class="font-size-15 mb-1">Star Health</h5>
+                                                                <p class="font-size-13 text-muted mb-0">Health Insurance Permium </p>
+                                                            </td>
+                                                            <td class="text-end">₹499.00</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th scope="row">02</th>
+                                                            <td>
+                                                                <h5 class="font-size-15 mb-1">Star Health</h5>
+                                                                <p class="font-size-13 text-muted mb-0">Accident Insurance Permium </p>
+                                                            </td>
+                                                            <td class="text-end">₹499.00</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row" colspan="2" class="text-end">Sub Total</th>
+                                                            <td class="text-end">₹998.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row" colspan="2" class="border-0 text-end">
+                                                                Tax</th>
+                                                            <td class="border-0 text-end">₹12.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row" colspan="2" class="border-0 text-end">Total</th>
+                                                            <td class="border-0 text-end"><h4 class="m-0">$1010.00</h4></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="d-print-none mt-3">
+                                            <div class="float-end">
+                                                <a href="javascript:window.print()" class="btn btn-success waves-effect waves-light me-1"><i class="fa fa-print"></i></a>
+                                                <a href="#" class="btn btn-primary w-md waves-effect waves-light">Send</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col -->
+
+                           
+                        </div><!-- end row -->
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+                
+                <footer class="footer footer-bg-cr">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © Sfitech
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Design & Develop by <a href="#!" class="text-decoration-underline">Sfitech Services</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

@@ -1,0 +1,335 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block title %} Dashboard|siftech {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+{% endblock stylesheets %}
+{% block content %}
+
+<div class="main-content">
+
+    <div class="page-content">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Contactbook</h4>
+
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                                <li class="breadcrumb-item active">Contactbook</li>
+                            </ol>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+             <div class="container-fluid">
+                <div class="row mb-3" style="border-bottom: 1px solid rgb(95, 94, 94);">
+                    <!-- Left column (col-lg-6) -->
+                    <div class="col-lg-6">
+                        <div class="input-group mb-3">
+                            <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button"><i class="bx bx-upload mx-2"></i> Import Contact</button>
+                            <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button"><i class="bx bxs-archive-out mx-2"></i> Export Contact</button>
+                           
+                        </div> 
+                    </div>
+                    
+                    <!-- Right column (col-lg-6) -->
+                    <div class="col-lg-6">
+                        <div class="input-group mb-3 d-flex justify-content-end align-items-center">
+                            
+                            <button class="btn btn-primary mx-2 mb-lg-0 mb-2" type="button"><i class="bx bx-plus me-1"></i>Contact</button>
+                            &nbsp;&nbsp;&nbsp;
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle mb-lg-0 mb-2" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-folder-plus mx-2"></i>Payout <i class="mdi mdi-chevron-down"></i></button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a> 
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Separated link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <!-- Left column (col-lg-5) -->
+                    <div class="col-lg-9">
+                        <div class="d-flex align-items-center flex-wrap mb-3">
+                            <div class="me-3">
+                                <strong>Quick filters:</strong>
+                            </div>
+                            <button class="btn btn-primary mx-3 mb-lg-0 mb-2 " type="button"><i class="bx bx-calendar"></i> All Contacts</button>
+                            <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button"> vendors</button>
+                            <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button"> Employees</button>
+                            <button class="btn btn-secondary mx-2 mb-lg-0 mb-2" type="button"> Customers</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Right column (col-lg-7) -->
+                    <div class="col-lg-3">
+                        <div class="input-group mb-3 d-flex justify-content-end align-items-center">
+                            <div class="flex-shrink-0">
+                                <select class="form-select form-select-sm mb-0 my-n1 bg-transparent">
+                                    <option value="MAY" class="text-primary" selected="">View More Filters</option>
+                                    <option value="AP"  class="text-primary">April</option>
+                                    <option value="MA"  class="text-primary">March</option>
+                                    <option value="FE"  class="text-primary">February</option>
+                                    <option value="JA"  class="text-primary">January</option>
+                                    <option value="DE"  class="text-primary">December</option>
+                                </select>
+                            </div>
+                            
+                            
+                            
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+            <div class="row mb-3">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- end row -->
+                            <div class="table-responsive">
+                                <table class="table align-middle datatable dt-responsive table-check nowrap" style="border-collapse: collapse; border-spacing: 0 8px; width: 100%;">
+                                    <thead>
+                                        <tr class="bg-transparent">
+                                            <th style="width: 30px;">
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" name="check" class="form-check-input" id="checkAll">
+                                                    <label class="form-check-label" for="checkAll"></label>
+                                                </div>
+                                            </th>
+                                            <th>Name</th>
+                                            <th>Type</th>
+                                            <th>Phone Number</th>
+                                            <th>Email ID</th>
+                                            <th>Contact ID</th>
+                                            <th style="width: 90px;">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>Self</td>
+                                            <td>(123) 456-7890</td>
+                                            <td>john.doe@example.com</td>
+                                            <td>CID001</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>jane.smith</td>
+                                            <td>Added</td>
+                                            <td>(234) 567-8901</td>
+                                            <td>jane.smith@example.com</td>
+                                            <td>CID002</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>michael.brown</td>
+                                            <td>Self</td>
+                                            <td>(345) 678-9012</td>
+                                            <td>michael.brown@example.com</td>
+                                            <td>CID003</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>emily.davis</td>
+                                            <td>Added</td>
+                                            <td>(456) 789-0123</td>
+                                            <td>emily.davis@example.com</td>
+                                            <td>CID004</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>christopher.wilson</td>
+                                            <td>Self</td>
+                                            <td>(567) 890-1234</td>
+                                            <td>christopher.wilson@example.com</td>
+                                            <td>CID005</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>olivia.martinez</td>
+                                            <td>Added</td>
+                                            <td>(678) 901-2345</td>
+                                            <td>olivia.martinez@example.com</td>
+                                            <td>CID006</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check font-size-16">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <label class="form-check-label"></label>
+                                                </div>
+                                            </td>
+                                            <td>isabella.moore</td>
+                                            <td>Self</td>
+                                            <td>(789) 012-3456</td>
+                                            <td>isabella.moore@example.com</td>
+                                            <td>CID007</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-link font-size-16 shadow-none py-0 text-muted dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bx bx-dots-horizontal-rounded"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Print</a></li>
+                                                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- end table responsive -->
+                        </div>
+                        <!-- end card body -->
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div> <!-- container-fluid -->
+    </div>
+    <!-- End Page-content -->
+
+    
+    <footer class="footer footer-bg-cr">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <script>document.write(new Date().getFullYear())</script> © Sfitech
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end d-none d-sm-block">
+                        Design & Develop by <a href="#!" class="text-decoration-underline">Sfitech Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}
